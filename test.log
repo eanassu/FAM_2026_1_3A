@@ -1,0 +1,5 @@
+/*C1*/SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+COMMIT
+/*C2*/SET SCHEMA PUBLIC
+create table Funcionarios(\u000a  re int,\u000a  nome varchar(100),\u000a  salario decimal(15,2),\u000a  dataAdmissao date,\u000a  primary key(re))
