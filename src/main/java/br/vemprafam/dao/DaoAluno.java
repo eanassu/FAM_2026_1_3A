@@ -58,7 +58,7 @@ public class DaoAluno {
 	}
 
 	public void delete(Aluno aluno) {
-		String sql = "DELETE FROM alunoS WHERE re=?";
+		String sql = "DELETE FROM alunoS WHERE ra=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, aluno.getRa());
@@ -87,7 +87,7 @@ public class DaoAluno {
 		return result;
 	}
 
-	public Aluno buscarPeloRe(int ra) {
+	public Aluno buscarPeloRa(int ra) {
 		String sql = "SELECT * FROM ALUNOS WHERE ra=?";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(sql);

@@ -3,18 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>alteração</title>
-<script>
-	document.addEventListener('DOMContentLoaded', function() {
-		var dateField = document.getElementById('dataAdm');
-		var currentDate = dateField.value;
-		if( currentDate ) {
-			var dateParts = currentDate.split('-');
-			var formattedDate = dateParts[2]+
-			                    '/'+dateParts[1]+'/'+ dateParts[0];
-		}
-		dateField.value = formattedDate;
-	});
-</script>
 </head>
 <body>
 <form action="#" th:action="@{/funcionarios/update}" th:object="${funcionario}"
