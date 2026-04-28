@@ -9,20 +9,26 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
 import br.vemprafam.pojo.Funcionario;
 
+@Repository
 public class DaoFuncionario {
-
-	private String url = "jdbc:hsqldb:hsql://localhost/";
-	private String user = "SA";
-	private String password = "";
 
 	private Connection conn;
 
 	public DaoFuncionario() {
+	}
+
+	@Autowired
+	public DaoFuncionario(DataSource dataSource) {
 		try {
-			conn = DriverManager.getConnection(url,user,password);
-		} catch (SQLException e) {
+			conn = dataSource.getConnection();
+		} catch(SQLException e) {
 			e.printStackTrace();
 		}
 	}
