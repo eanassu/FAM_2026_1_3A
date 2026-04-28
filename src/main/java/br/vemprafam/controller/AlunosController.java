@@ -2,6 +2,7 @@ package br.vemprafam.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,8 @@ import br.vemprafam.pojo.Funcionario;
 @Controller
 @RequestMapping("/alunos")
 public class AlunosController {
+	@Autowired
+	DaoAluno dao;
 	@GetMapping
 	String showAlunosHomeVazio(Model model) {
 		return "alunos";
@@ -32,7 +35,7 @@ public class AlunosController {
 		model.addAttribute("aluno", aluno );
 		return "create-aluno";
 	}
-	DaoAluno dao = new DaoAluno();
+
 	@PostMapping
 	public String insert(@ModelAttribute Aluno aluno) {
 		dao.insert(aluno);
