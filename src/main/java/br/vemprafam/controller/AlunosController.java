@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import br.vemprafam.dao.DaoAluno;
-import br.vemprafam.dao.DaoFuncionario;
 import br.vemprafam.pojo.Aluno;
-import br.vemprafam.pojo.Funcionario;
 
 @Controller
 @RequestMapping("/alunos")
